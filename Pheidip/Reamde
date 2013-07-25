@@ -1,0 +1,46 @@
+Pheidip Chat Protocoll
+######################
+
+- Established TLS connection
+
+Client						Server
+------						-------
+
+HELLO:						WELCOME					/					ERR:
+	userame						REMEMBER username							unauthenticate
+	password:
+
+_____________________________________________________________
+
+LIST CONTACTS:		->		USER LIST:
+								username: online | offline
+								...
+
+_____________________________________________________________
+
+SEND MSG:			->		OK:						/					ERR:
+	to username					msg_id										SEND error_code
+	content
+
+RECEIVED:			<-		MSG RECEIVE:			/					ERR:
+	msg_id						from										SEND error_code
+								content
+								msg_id
+
+					<-		DELIVERED:				/					ERR:
+								msg_id										SEND error_code
+_____________________________________________________________
+
+	
+ADD CONTACT:		->		UPDATE CONTACT LIST:	/					ERR:
+	username					ADD username								SEND error_code
+	
+_____________________________________________________________
+	
+DEL CONTACT:		->		UPDATE CONTACT LIST:	/					ERR:
+	username					DELETE username								SEND error_code
+
+
+								
+							
+
